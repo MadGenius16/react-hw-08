@@ -1,21 +1,30 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import css from "./App.module.css";
-
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound/NotFound";
-
 import Layout from "./Layout/Layout";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthRefreshing } from "../redux/auth/selectors";
+import { apiRefreshUser } from "../redux/auth/operations";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
 const RegistrationPage = lazy(() => import("../pages/RegistrationPage/RegistrationPage"));
 const ContactsPage = lazy(() => import("../pages/ContactsPage/ContactsPage"));
 function App() {
-  
+
+const dispath = useDispatch();
+const isRefreshing = useSelector(selectAuthRefreshing);
+
+useEffect(()=>{
+  dispath(apiRefreshUser())
+},[dispath])
+
+  if(isRefreshing) return <b>User is refreshing, please wait</b>
+
   return (
     <div className={css.container}>
-   
-<Layout/>
+      <Layout />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />

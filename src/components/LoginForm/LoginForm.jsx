@@ -20,10 +20,10 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const error = useSelector(selectAuthError);
   const INITIAL_VALUES = { email: "", password: "" };
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (values) => {
     console.log(values)
     dispatch(apiLogin(values));
-    actions.resetForm();
+    
   };
 
   return (

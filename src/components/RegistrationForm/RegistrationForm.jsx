@@ -25,10 +25,10 @@ const RegistrationForm = () => {
   const error = useSelector(selectAuthError)
   const dispatch = useDispatch();
   const INITIAL_VALUES = { name: "", email: "", password: "" };
-  const handleSubmit = (values, actions) => {
+  const handleSubmit = (values) => {
     console.log(values)
     dispatch(apiRegister(values));
-    actions.resetForm()
+   
   };
 
   return (
