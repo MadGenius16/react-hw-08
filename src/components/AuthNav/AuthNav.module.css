@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+ gap: 16px;
+ list-style: none;
+ padding: 16px;
+
+}
+
+.link {
+  padding: 8px 8px;
+  border-radius: 6px;
+  color: black;
+  font-size: 20px;
+
+}
+
+.isActive {
+  background-color: rgb(89, 89, 89);
+  color: rgb(255, 255, 255);
+}
+
+.link:hover {
+  border: transparent;
+  background-color: rgb(206, 206, 206);
+  transition: 0.5s ease;
+}

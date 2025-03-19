@@ -1,0 +1,37 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+}
+.label{
+  display: flex;
+  flex-direction: column;
+}
+.field{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.btnSubmit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-width: 120px;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 6px 2px;
+}
+
+.error{
+  color: rgba(250, 205, 7, 0.88);
+}
+
+.title{
+  margin-bottom: 10px;;
+}
