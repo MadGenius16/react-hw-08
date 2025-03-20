@@ -1,6 +1,6 @@
 .userText{
   color: black;
-  font-size: 22px;
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -15,18 +15,19 @@
 
 .btnLogout{
   display: flex;
-  font-size: 16px;
-  border: 1px solid black;
+  font-size: 20px;
+  border: none;
   border-radius: 6px;
   justify-content: center;
   align-items: center;
   padding: 8px 10px;
-
+  background-color: rgb(89, 89, 89);
+  color: rgb(255, 255, 255);
 }
 
 .btnLogout:hover {
-  /* border: transparent; */
-  color: rgb(184, 111, 23);
+  border: transparent;
+  background-color: rgb(206, 206, 206);
   transition: 0.5s ease;
 }
 

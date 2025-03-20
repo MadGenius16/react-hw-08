@@ -21,7 +21,6 @@ const LoginForm = () => {
   const error = useSelector(selectAuthError);
   const INITIAL_VALUES = { email: "", password: "" };
   const handleSubmit = (values) => {
-    console.log(values)
     dispatch(apiLogin(values));
     
   };
