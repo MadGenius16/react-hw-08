@@ -5,6 +5,7 @@ import SearchBox from "../../components/SearchBox/SearchBox"
 import { fetchContacts } from "../../redux/contacts/contactsOps";
 import { useEffect } from "react";
 import { selectError, selectLoading } from "../../redux/contacts/contactsSelectors";
+import toast from "react-hot-toast";
 
 
 const ContactsPage = () => {
@@ -14,7 +15,9 @@ const ContactsPage = () => {
   const loading = useSelector(selectLoading);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchContacts()).unwrap().then(() => {
+      toast.success("Contacts loaded successfully");
+    });
   }, [dispatch]);
 
   return (
